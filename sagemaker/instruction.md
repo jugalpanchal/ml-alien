@@ -18,3 +18,10 @@ To comunicate with SageMaker you need to install the notebook scoped libraries. 
 We install boto3 (the AWS Python 3 SDK) and the high level SageMaker SDK.	    
 sc.install_pypi_package("boto3==1.16.9");    
 sc.install_pypi_package('sagemaker==2.16.1');    
+
+### Bucket
+- data - source data ex. abalone.csv
+- train - train data from the source(75%)
+- test - test data from the source(25%) 
+- inference - predicated values from the model by using the test data when we run(batch process) the model with the entire test data.
+- model - Actual trained model file which can be used to predice values for any input set. We can pickle it even. s3://sagemaker-us-east-2-1234567890123/xgboost-YYYY-MM-DD-HH-mm-ss-mmm/output/model.tar.gz
